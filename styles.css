@@ -1,0 +1,149 @@
+body {
+    background-image: linear-gradient(to right top, #ff9a9e, #fecfef, #feceef, #f5ace1, #ffdde1);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    perspective: 1000px;
+  }
+  
+  .gift-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f06292;
+    border: 5px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .gift-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  .gift-box::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.7s ease-in-out;
+    transform-origin: top;
+    z-index: 10;
+  }
+  
+  .card-message {
+    display: none;
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff4081;
+  }
+  
+  .card-message #head {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8em;
+    color: #f06292;
+    margin-bottom: 10px;
+  }
+  
+  .next-page {
+    display: none;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #f06292;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .next-page:hover {
+    background-color: #e91e63;
+  }
+  
+  .korean-message {
+    display: none;
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff4081;
+  }
+  
+  .gift-box.open::before {
+    transform: rotateX(90deg);
+  }
+  
+  .gift-box.open + .card-message {
+    display: block;
+    animation: slideUp 0.7s ease forwards;
+  }
+  
+  .korean-message.show {
+    display: block;
+    animation: slideUp 0.7s ease forwards;
+  }
+  
+  .close-box {
+    margin-top: 20px;
+    color: #fff;
+    background-color: #f06292;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-box:hover {
+    background-color: #e91e63;
+  }
+  
+  @keyframes slideUp {
+    from {
+      bottom: -200px;
+    }
+    to {
+      bottom: 50px;
+    }
+  }
+  
